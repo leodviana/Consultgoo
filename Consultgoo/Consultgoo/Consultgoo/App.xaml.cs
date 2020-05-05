@@ -15,7 +15,9 @@ namespace Consultgoo
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
+#if DEBUG
+            HotReloader.Current.Run(this);
+#endif
             var mainPage = $"{nameof(NavigationPage)}/{nameof(MainPage)}";
             await NavigationService.NavigateAsync(mainPage);
         }

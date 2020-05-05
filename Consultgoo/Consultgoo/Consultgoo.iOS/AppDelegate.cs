@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
 
 namespace Consultgoo.iOS
@@ -26,6 +28,12 @@ namespace Consultgoo.iOS
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+    }
+    public class iOsInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
         }
     }
 }
